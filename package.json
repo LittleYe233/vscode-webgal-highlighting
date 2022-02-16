@@ -1,0 +1,25 @@
+{
+    "name": "vscode-webgal-highlighting",
+    "displayName": "WebGAL Syntax",
+    "description": "A VS Code language extension to support scripts of MakinoharaShoko/WebGAL",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.64.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "webgal",
+            "aliases": ["WebGAL Script", "webgal"],
+            "extensions": [".txt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "webgal",
+            "scopeName": "source.webgal",
+            "path": "./syntaxes/webgal.tmLanguage.json"
+        }]
+    }
+}
