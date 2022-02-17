@@ -10,16 +10,28 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "webgal",
-            "aliases": ["WebGAL Script", "webgal"],
-            "extensions": [".txt"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "webgal",
-            "scopeName": "source.webgal",
-            "path": "./syntaxes/webgal.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "webgal",
+                "aliases": [
+                    "WebGAL Script",
+                    "webgal"
+                ],
+                "extensions": [
+                    ".txt"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "webgal",
+                "scopeName": "source.webgal",
+                "path": "./syntaxes/webgal.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "js-yaml": "^4.1.0"
     }
 }
