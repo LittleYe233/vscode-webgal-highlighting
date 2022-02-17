@@ -1,22 +1,38 @@
-# webgal-syntax README
+# WebGAL Support for Visual Studio Code
 
-This is the README for your extension "webgal-syntax". After writing up a brief description, we recommend including the following sections.
+**GitHub:** <https://github.com/LittleYe233/vscode-webgal-highlighting>
+
+**NPM:** <https://www.npmjs.com/package/vscode-webgal-highlighting>
+
+![npm](https://img.shields.io/npm/v/vscode-webgal-highlighting?style=flat-square) [![GitHub license](https://img.shields.io/github/license/LittleYe233/vscode-webgal-highlighting?style=flat-square)](https://github.com/LittleYe233/vscode-webgal-highlighting/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/LittleYe233/vscode-webgal-highlighting?style=flat-square)](https://github.com/LittleYe233/vscode-webgal-highlighting/issues)
+
+This package is a Visual Studio Code extension to provide language support for [MakinoharaShoko/WebGAL](https://github.com/MakinoharaShoko/WebGAL/).
+
+WebGAL is a brand new visual novel engine based on Web and is still under development and code refactoring, its stable releases published.
+
+Now this extension is still being tested and waiting for more stable syntaxes supported by WebGAL.
+
+This extension will complete more complicated language support like semantic highlighting in the future.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Syntax highlighting
+  - Keywords (`changeBG`, `if`, `setVar`, etc.)
+  - Comments
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+**Note:** This extension doesn't specify any preferred file type to provide language support, for the extension of all WebGAL scripts is ".txt". You can specify the viewing language to "WebGAL Script (webgal)" for the scripts at the right bottom corner of Visual Studio Code.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Users
 
-## Extension Settings
+There is no more requirement for Visual Studio Code user. Just install the extension in the marketplace and enjoy it.
+
+### Developers
+
+All requirements on dependencies are written in `package.json`. After cloning the repository, execute `npm install` in it via your preferred terminal.
+
+<!-- ## Extension Settings
 
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
@@ -25,41 +41,20 @@ For example:
 This extension contributes the following settings:
 
 * `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* `myExtension.thing`: set to `blah` to do something -->
 
-## Known Issues
+<!-- ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Calling out known issues can help limit users opening duplicate issues against your extension. -->
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+Almost following the rules on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-### 1.0.0
+### [0.1.0] - 2022-02-17
 
-Initial release of ...
+This is the initial release and also the pre-release, including part of the complete features.
 
-### 1.0.1
+#### Added
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Add syntax highlighting for comments and keywords.
