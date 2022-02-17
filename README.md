@@ -49,24 +49,4 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
-Almost following the rules on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
-
-### [0.1.1] - 2022-02-17
-
-This release has no core updates, just fixing the problems of package metadata.
-
-#### Added
-
-- `license` in `package.json`.
-
-#### Fixed
-
-- Fix `publisher` conflict in `package.json`.
-
-### [0.1.0] - 2022-02-17
-
-This is the initial release and also the pre-release, including part of the complete features.
-
-#### Added
-
-- Syntax highlighting for comments and keywords.
+Please check [CHANGELOG.md](/CHANGELOG.md).
