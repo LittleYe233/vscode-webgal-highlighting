@@ -1,0 +1,65 @@
+$schema: 'https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json'
+name: WebGAL Script
+patterns:
+  - include: '#comments'
+  - include: '#keywords'
+  - include: '#meta'
+repository:
+  comments:
+    patterns:
+      - match: (\/\/) *(.*)
+        captures:
+          0:
+            name: comment.line.double-slash.webgal
+          1:
+            name: punctuation.definition.comment.webgal
+  keywords:
+    patterns:
+      # use an inline modifier
+      - match: (?m)^[ \t]*(intro|miniAvatar|changeBG(_next)?|changeP(_(left|right))?(_next)?)(:)
+      # only use normal patterns
+      # - match: '(^[ \t]*|\n[ \t]*)(intro):'
+        captures:
+          1:
+            name: keyword.stage.normal.webgal
+          2:
+            name: punctuation.separator.colon.webgal
+      - match: (?m)^[ \t]*(set(Bg|Fig)Ani)(:)
+        captures:
+          1:
+            name: keyword.stage.animated.webgal
+          2:
+            name: punctuation.separator.colon.webgal
+      - match: (?m)^[ \t]*(bgm|playVideo)(:)
+        captures:
+          1:
+            name: keyword.media.webgal
+          2:
+            name: punctuation.separator.colon.webgal
+      - match: (?m)^[ \t]*((set|show)Var|var(Set|Up|Drop))(:)
+        captures:
+          1:
+            name: keyword.definition.variable.webgal
+          2:
+            name: punctuation.separator.colon.webgal
+      - match: ^[ \t]*(if)\(
+        captures:
+          1:
+            name: keyword.control.conditional.webgal
+      - match: (?m)^[ \t]*(changeScene|choose(_label)?|(jump_)?label|jump_var(Reach|Below))(:)
+        captures:
+          1:
+            name: keyword.control.flow.webgal
+          2:
+            name: punctuation.separator.colon.webgal
+  meta:
+    patterns:
+      - begin: \(
+        beginCaptures:
+          0:
+            name: meta.brace.round.open.webgal
+        end: \)
+        endCaptures:
+          0:
+            name: meta.brace.round.close.webgal
+scopeName: source.webgal
