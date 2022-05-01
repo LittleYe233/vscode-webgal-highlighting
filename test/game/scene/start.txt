@@ -1,0 +1,53 @@
+// See: https://docs.msfasr.com/guide/#%E7%94%A8%E6%88%B7%E5%89%A7%E6%9C%AC%E7%9A%84%E7%BC%96%E5%86%99%E8%AF%AD%E6%B3%95
+
+intro:回忆不需要适合的剧本，,反正一说出口，,都成了戏言。;
+intro:回忆不需要适合的剧本，|反正一说出口，|都成了戏言。;
+
+雪之下雪乃:请用茶;
+由比滨:啊，谢谢;
+小町:谢谢雪乃姐！;
+一色:谢谢学姐。;
+
+雪之下雪乃:你到得真早;  -V1.ogg;
+对不起，等很久了吗？; -V2.ogg;
+比企谷八幡:刚到而已;
+
+changeBg:testBG03.jpg;
+changeFigure:testFigure02.png;
+changeBg:none;
+changeFigure:none;
+
+changeBg:testBG03.jpg -next;
+changeFigure:testFigure02.png -next;
+
+changeFigure:testFigure03.png -left -next;
+changeFigure:testFigure04.png -next;
+changeFigure:testFigure03.png -right -next;
+
+changeFigure:none -left;
+changeFigure:none;
+changeFigure:none -right;
+
+miniAvatar:minipic_test.png;
+miniAvatar:none;
+
+changeScene:Chapter-2.txt;
+callScene:Chapter-2.txt;
+
+choose:叫住她:Chapter-2.txt|回家:Chapter-3.txt;
+
+end;
+
+bgm:夏影.mp3;
+playVideo:OP.mp4
+
+setBgAni:bg_softIn 5s;
+setFigAni:leftIn 1s -left;
+setBgTransform:scale(1.15, 1.15) translate(-5%, 0);
+setBgFilter:blur(1px);
+
+pixiInit;
+pixiPerform:rain;
+
+jumpLabel:label_1;
+label:label_1;

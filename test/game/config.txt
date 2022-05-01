@@ -1,0 +1,6 @@
+// See: https://docs.msfasr.com/guide/#%E5%AE%9A%E5%88%B6%E4%BD%A0%E7%9A%84%E6%B8%B8%E6%88%8F%E4%BF%A1%E6%81%AF
+
+Game_name:WebGAL;
+Game_key:0f33fdGr;
+Title_img:Title2.png;
+Title_bgm:夏影.mp3;
