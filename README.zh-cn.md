@@ -34,6 +34,14 @@ WebGAL 是一款全新的基于 Web 的视觉小说引擎，目前仍在开发�
 
 所有的依赖项已经写入 `package.json` 中。克隆本仓库后，在其中执行 `npm install` 命令。
 
+#### 使用 YAML 开发
+
+VS Code 使用 JSON 文件（`*.tmLanguage.json`）来高亮代码，但是有时用 JSON 格式编写高亮规则有点令人不快。因此，本项目中，你可以先在 YAML 文件中编写，再将其转换为 JSON 格式的文件。
+
+`package.json` 提供了一个轻松转换 YAML 和 JSON 格式的选择——`js-yaml`。若要使用，首先在全局安装该包 `npm install -g js-yaml`。安装并在 `syntaxes/webgal.tmLanguage.yml` 文件中编写好规则后，再执行 `js-yaml syntaxes/webgal.tmLanguage.yml > syntaxes/webgal.tmLanguage.json` 来应用更改。
+
+当然，不用顾虑直接在 JSON 文件中作更改——我们会合并这些更改后，将其再转化为 YAML 文件。
+
 ### 本地测试
 
 若要在本地测试本扩展，在一个 VS Code 窗口中打开本仓库，按 `F5` 启动调试。调试器将会自动加载仓库中的扩展。之后的操作与普通用户相同。
