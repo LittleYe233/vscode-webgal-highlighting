@@ -34,6 +34,14 @@ WebGAL 是一款全新的基于 Web 的视觉小说引擎，目前仍在开发�
 
 所有的依赖项已经写入 `package.json` 中。克隆本仓库后，在其中执行 `npm install` 命令。
 
+#### 使用 YAML 开发
+
+VS Code 使用 JSON 文件（`*.tmLanguage.json`）来高亮代码，但是有时用 JSON 格式编写高亮规则有点令人不快。因此，本项目中，你可以先在 YAML 文件中编写，再将其转换为 JSON 格式的文件。
+
+`package.json` 提供了一个轻松转换 YAML 和 JSON 格式的选择——`js-yaml`。若要使用，首先在全局安装该包 `npm install -g js-yaml`。安装并在 `syntaxes/webgal.tmLanguage.yml` 文件中编写好规则后，再执行 `js-yaml syntaxes/webgal.tmLanguage.yml > syntaxes/webgal.tmLanguage.json` 来应用更改。
+
+当然，不用顾虑直接在 JSON 文件中作更改——我们会合并这些更改后，将其再转化为 YAML 文件。
+
 ### 本地测试
 
 若要在本地测试本扩展，在一个 VS Code 窗口中打开本仓库，按 `F5` 启动调试。调试器将会自动加载仓库中的扩展。之后的操作与普通用户相同。
@@ -53,6 +61,12 @@ WebGAL 是一款全新的基于 Web 的视觉小说引擎，目前仍在开发�
   - 非英文的 `<描述>` 和 `[可选 正文]` 也能接受；
   - 你可以配置 [husky](https://typicode.github.io/husky/#/) 作提交提示；
   - 如果你的提交将关闭任何 issue 或 PR，请利用好 `[可选 脚注]`，类似 `Close #xx`、`PR Close #xx`（只要是 GitHub 支持的写法都可接受）。
+- Scope 命名
+
+  最好为 scopes 选择合适的名字。VS Code 语言插件官方文档中提及了 [TextMate 1.x Manual](https://macromates.com/manual/en/language_grammars)，后者包含了一个有关 scope 命名惯例的详细列表。另外你也可以阅读 VS Code 内置的语言文件，例如 `json.tmLanguage.json`。
+- 分支
+
+  你的 PR 的上游分支应该设置为 `main`，而不是 `dev`。某条用中文编写的 [issue](https://github.com/LittleYe233/vscode-webgal-highlighting/issues/3) 解释了原因。
 
 ## 发行说明
 

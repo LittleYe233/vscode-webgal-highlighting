@@ -34,6 +34,14 @@ There is no more requirement for normal users. Just install the extension in the
 
 All requirements on dependencies are written in `package.json`. After cloning the repository, execute `npm install` in it via your preferred terminal.
 
+#### Develop with YAML
+
+VS Code uses JSON files (`*.tmLanguage.json`) to highlight code, but it's sometimes a bit annoying to write these highlighting rules in JSON format. So you can write them into YAML files first, and then convert them to JSON files.
+
+`package.json` just provides an option to easily convert YAML to JSON - `js-yaml`. To use it, first install it globally via `npm install -g js-yaml`. After installing it and writing some rules in `syntaxes/webgal.tmLanguage.yml`, execute `js-yaml syntaxes/webgal.tmLanguage.yml > syntaxes/webgal.tmLanguage.json` to apply your changes.
+
+Of course, don't worry to directly commit your changes on JSON files - we will merge these changes and convert them to YAML later.
+
 ### Test locally
 
 If you want to test this extension locally, open a new VS Code window in the repository folder and press `F5` to start a debugger. It will automatically load this extension and you can have a try just like normal users.
@@ -68,6 +76,13 @@ There are only few suggestions for developers who create PRs:
   - non-English `<description>` and `[optional body]` of a commit can be accepted;
   - you can set up [husky](https://typicode.github.io/husky/#/) to lint your commits;
   - if your commits will close any issue or PR, please take advantage of `[optional footer(s)]` like `Close #xx` and `PR Close #xx` (accepted as long as GitHub supports it).
+- Scope naming
+
+  It's better to choose appropriate names for your scopes. [TextMate 1.x Manual](https://macromates.com/manual/en/language_grammars) is mentioned in the official documentation of VS Code language extension, which includes a detailed list of conventional scope names. Also you can have a look at the built-in language files in VS Code, i.e. `json.tmLanguage.json`.
+
+- Branches
+
+  The upstream branch of your pull requests should be `main`, not `dev`. There is an [issue](https://github.com/LittleYe233/vscode-webgal-highlighting/issues/3) written in Chinese explaining why.
 
 ## Release Notes
 
