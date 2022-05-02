@@ -6,7 +6,7 @@
       "include": "#comments"
     },
     {
-      "include": "#keywords"
+      "include": "#configurations"
     },
     {
       "include": "#meta"
@@ -28,68 +28,73 @@
         }
       ]
     },
-    "keywords": {
+    "configurations": {
       "patterns": [
         {
-          "match": "(?m)^[ \\t]*(intro|miniAvatar|changeBG(_next)?|changeP(_(left|right))?(_next)?)(:)",
+          "match": "(?m)^[ \\t]*(Game_name)(:)([^;]*)(;)?",
           "captures": {
             "1": {
-              "name": "keyword.stage.normal.webgal"
+              "name": "keyword.game.name.webgal"
             },
             "2": {
               "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "name": "string.unquoted.game_name.webgal"
+            },
+            "4": {
+              "name": "punctuation.separator.semicolon.webgal"
             }
           }
         },
         {
-          "match": "(?m)^[ \\t]*(set(Bg|Fig)Ani)(:)",
+          "match": "(?m)^[ \\t]*(Game_key)(:)([^;]*)(;)?",
           "captures": {
             "1": {
-              "name": "keyword.stage.animated.webgal"
+              "name": "keyword.game.key.webgal"
             },
             "2": {
               "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "name": "string.unquoted.game_key.webgal"
+            },
+            "4": {
+              "name": "punctuation.separator.semicolon.webgal"
             }
           }
         },
         {
-          "match": "(?m)^[ \\t]*(bgm|playVideo)(:)",
+          "match": "(?m)^[ \\t]*(Title_img)(:)([^;]*)(;)?",
           "captures": {
             "1": {
-              "name": "keyword.media.webgal"
+              "name": "keyword.title.image.webgal"
             },
             "2": {
               "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "name": "string.unquoted.title_image.webgal"
+            },
+            "4": {
+              "name": "punctuation.separator.semicolon.webgal"
             }
           }
         },
         {
-          "match": "(?m)^[ \\t]*((set|show)Var|var(Set|Up|Drop))(:)",
+          "match": "(?m)^[ \\t]*(Title_bgm)(:)([^;]*)(;)?",
           "captures": {
             "1": {
-              "name": "keyword.definition.variable.webgal"
+              "name": "keyword.title.bgm.webgal"
             },
             "2": {
               "name": "punctuation.separator.colon.webgal"
-            }
-          }
-        },
-        {
-          "match": "^[ \\t]*(if)\\(",
-          "captures": {
-            "1": {
-              "name": "keyword.control.conditional.webgal"
-            }
-          }
-        },
-        {
-          "match": "(?m)^[ \\t]*(changeScene|choose(_label)?|(jump_)?label|jump_var(Reach|Below))(:)",
-          "captures": {
-            "1": {
-              "name": "keyword.control.flow.webgal"
             },
-            "2": {
-              "name": "punctuation.separator.colon.webgal"
+            "3": {
+              "name": "string.unquoted.title_bgm.webgal"
+            },
+            "4": {
+              "name": "punctuation.separator.semicolon.webgal"
             }
           }
         }

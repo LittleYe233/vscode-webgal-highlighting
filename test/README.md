@@ -13,10 +13,10 @@ The folder structure is (almost) the same as that in real time. At present all W
 Here is a list of (almost) all syntaxes of WebGAL, where those checked are supported by the extension and can be tested via "Developer: Inspect Editor Tokens and Scopes".
 
 - Configurations (`game/config.txt`)
-  - [ ] Game name (`Game_name`)
-  - [ ] Game key (`Game_key`)
-  - [ ] Image in the title screen (`Title_img`)
-  - [ ] Background music in the title screen (`Title_bgm`)
+  - [x] Game name (`Game_name`)
+  - [x] Game key (`Game_key`)
+  - [x] Image in the title screen (`Title_img`)
+  - [x] Background music in the title screen (`Title_bgm`)
 - Scenarios (`game/scene/*.txt`)
   - [ ] Conversations (`<Speaker>:<Sentence>;`)
     - [ ] Conversations without speakers (`<Sentence>;`)
@@ -43,7 +43,7 @@ Here is a list of (almost) all syntaxes of WebGAL, where those checked are suppo
   - Variables **(awaiting development)**
 - General
   - [ ] Options (`-left`, `-right`, `-next`)
-  - [ ] Comments (`//`)
+  - [x] Comments (`//`)
 
 ## Acknowledgement
 
