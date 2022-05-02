@@ -9,7 +9,7 @@
       "include": "#configurations"
     },
     {
-      "include": "#meta"
+      "include": "#scenarios"
     }
   ],
   "repository": {
@@ -100,19 +100,141 @@
         }
       ]
     },
-    "meta": {
+    "scenarios": {
       "patterns": [
         {
-          "begin": "\\(",
-          "beginCaptures": {
-            "0": {
-              "name": "meta.brace.round.open.webgal"
+          "match": "(?m)^[ \\t]*(intro)(:)([^;]*)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.intro.webgal"
+            },
+            "2": {
+              "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "name": "meta.intro.value.webgal",
+              "patterns": [
+                {
+                  "match": "[^,|]+",
+                  "captures": {
+                    "0": {
+                      "name": "string.unquoted.intro.text.webgal"
+                    }
+                  }
+                },
+                {
+                  "match": "[,|]",
+                  "captures": {
+                    "0": {
+                      "name": "punctuation.separator.intro.text.webgal"
+                    }
+                  }
+                }
+              ]
+            },
+            "4": {
+              "name": "punctuation.separator.semicolon.webgal"
             }
-          },
-          "end": "\\)",
-          "endCaptures": {
-            "0": {
-              "name": "meta.brace.round.close.webgal"
+          }
+        },
+        {
+          "match": "(?m)^[ \\t]*(changeBg)(:)([^;]*)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.change_bg.webgal"
+            },
+            "2": {
+              "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "name": "meta.change_bg.value.webgal",
+              "patterns": [
+                {
+                  "match": "((none) )|(none$)",
+                  "captures": {
+                    "2": {
+                      "name": "constant.other.none.webgal"
+                    },
+                    "3": {
+                      "name": "constant.other.none.webgal"
+                    }
+                  }
+                },
+                {
+                  "match": "(-)(next)",
+                  "captures": {
+                    "1": {
+                      "name": "punctuation.separator.option.dash.webgal"
+                    },
+                    "2": {
+                      "name": "constant.language.control.next.webgal"
+                    }
+                  }
+                },
+                {
+                  "match": "[^ ;]+",
+                  "captures": {
+                    "0": {
+                      "name": "string.unquoted.change_bg.text.webgal"
+                    }
+                  }
+                }
+              ]
+            },
+            "4": {
+              "name": "punctuation.separator.semicolon.webgal"
+            }
+          }
+        },
+        {
+          "match": "(?m)^[ \\t]*(changeFigure)(:)([^;]*)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.change_figure.webgal"
+            },
+            "2": {
+              "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "name": "meta.change_figure.value.webgal",
+              "patterns": [
+                {
+                  "match": "((none) )|(none$)",
+                  "captures": {
+                    "2": {
+                      "name": "constant.other.none.webgal"
+                    },
+                    "3": {
+                      "name": "constant.other.none.webgal"
+                    }
+                  }
+                },
+                {
+                  "match": "(-)((left|right)|(next))",
+                  "captures": {
+                    "1": {
+                      "name": "punctuation.separator.option.dash.webgal"
+                    },
+                    "3": {
+                      "name": "constant.language.position.webgal"
+                    },
+                    "4": {
+                      "name": "constant.language.control.next.webgal"
+                    }
+                  }
+                },
+                {
+                  "match": "[^ ;]+",
+                  "captures": {
+                    "0": {
+                      "name": "string.unquoted.change_bg.text.webgal"
+                    }
+                  }
+                }
+              ]
+            },
+            "4": {
+              "name": "punctuation.separator.semicolon.webgal"
             }
           }
         }
