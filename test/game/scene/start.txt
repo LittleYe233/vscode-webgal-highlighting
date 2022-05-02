@@ -8,17 +8,12 @@ intro:回忆不需要适合的剧本，|反正一说出口，|都成了戏言。
 小町:谢谢雪乃姐！;
 一色:谢谢学姐。;
 
-雪之下雪乃:你到得真早;  -V1.ogg;
-对不起，等很久了吗？; -V2.ogg;
+雪之下雪乃:你到得真早 -V1.ogg;
+对不起，等很久了吗？ -V2.ogg;
 比企谷八幡:刚到而已;
 
-changeBg:testBG03.jpg;
-changeFigure:testFigure02.png;
-changeBg:none;
-changeFigure:none;
-
 changeBg:testBG03.jpg -next;
-changeFigure:testFigure02.png -next;
+changeBg:none;
 
 changeFigure:testFigure03.png -left -next;
 changeFigure:testFigure04.png -next;
