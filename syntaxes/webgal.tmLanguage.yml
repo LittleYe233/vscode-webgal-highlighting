@@ -2,8 +2,8 @@ $schema: 'https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlangu
 name: WebGAL Script
 patterns:
   - include: '#comments'
-  - include: '#keywords'
-  - include: '#meta'
+  - include: '#configurations'
+  - include: '#scenarios'
 repository:
   comments:
     patterns:
@@ -13,53 +13,174 @@ repository:
             name: comment.line.double-slash.webgal
           1:
             name: punctuation.definition.comment.webgal
-  keywords:
+  configurations:
     patterns:
-      # use an inline modifier
-      - match: (?m)^[ \t]*(intro|miniAvatar|changeBG(_next)?|changeP(_(left|right))?(_next)?)(:)
-      # only use normal patterns
-      # - match: '(^[ \t]*|\n[ \t]*)(intro):'
+      - match: (?m)^[ \t]*(Game_name)(:)([^;]*)(;)?
         captures:
           1:
-            name: keyword.stage.normal.webgal
+            name: keyword.game.name.webgal
           2:
             name: punctuation.separator.colon.webgal
-      - match: (?m)^[ \t]*(set(Bg|Fig)Ani)(:)
+          3:
+            name: string.unquoted.game_name.webgal
+          4:
+            name: punctuation.separator.semicolon.webgal
+      - match: (?m)^[ \t]*(Game_key)(:)([^;]*)(;)?
         captures:
           1:
-            name: keyword.stage.animated.webgal
+            name: keyword.game.key.webgal
           2:
             name: punctuation.separator.colon.webgal
-      - match: (?m)^[ \t]*(bgm|playVideo)(:)
+          3:
+            name: string.unquoted.game_key.webgal
+          4:
+            name: punctuation.separator.semicolon.webgal
+      - match: (?m)^[ \t]*(Title_img)(:)([^;]*)(;)?
         captures:
           1:
-            name: keyword.media.webgal
+            name: keyword.title.image.webgal
           2:
             name: punctuation.separator.colon.webgal
-      - match: (?m)^[ \t]*((set|show)Var|var(Set|Up|Drop))(:)
+          3:
+            name: string.unquoted.title_image.webgal
+          4:
+            name: punctuation.separator.semicolon.webgal
+      - match: (?m)^[ \t]*(Title_bgm)(:)([^;]*)(;)?
         captures:
           1:
-            name: keyword.definition.variable.webgal
+            name: keyword.title.bgm.webgal
           2:
             name: punctuation.separator.colon.webgal
-      - match: ^[ \t]*(if)\(
-        captures:
-          1:
-            name: keyword.control.conditional.webgal
-      - match: (?m)^[ \t]*(changeScene|choose(_label)?|(jump_)?label|jump_var(Reach|Below))(:)
-        captures:
-          1:
-            name: keyword.control.flow.webgal
-          2:
-            name: punctuation.separator.colon.webgal
-  meta:
+          3:
+            name: string.unquoted.title_bgm.webgal
+          4:
+            name: punctuation.separator.semicolon.webgal
+  scenarios:
     patterns:
-      - begin: \(
-        beginCaptures:
-          0:
-            name: meta.brace.round.open.webgal
-        end: \)
-        endCaptures:
-          0:
-            name: meta.brace.round.close.webgal
+      - match: (?m)^[ \t]*(intro)(:)([^;]*)(;)?
+        captures:
+          1:
+            name: keyword.scenario.intro.webgal
+          2:
+            name: punctuation.separator.colon.webgal
+          3:
+            name: meta.intro.value.webgal
+            patterns:
+              - match: '[^,|]+'
+                captures:
+                  0:
+                    name: string.unquoted.intro.text.webgal
+              - match: '[,|]'
+                captures:
+                  0:
+                    name: punctuation.separator.intro.text.webgal
+          4:
+            name: punctuation.separator.semicolon.webgal
+      - match: (?m)^[ \t]*(changeBg)(:)([^;]*)(;)?
+        captures:
+          1:
+            name: keyword.scenario.change_bg.webgal
+          2:
+            name: punctuation.separator.colon.webgal
+          3:
+            name: meta.change_bg.value.webgal
+            patterns:
+              - match: ((none) )|(none$)
+                captures:
+                  2:
+                    name: constant.other.none.webgal
+                  3:
+                    name: constant.other.none.webgal
+              - match: '(-)(next)'
+                captures:
+                  1:
+                    name: punctuation.separator.option.dash.webgal
+                  2:
+                    name: constant.language.control.next.webgal
+              # NOTE: It will regard the whole line as a string.
+              # So we put it at the end of the pattern list.
+              - match: '[^ ;]+'
+                captures:
+                  0:
+                    name: string.unquoted.change_bg.text.webgal
+          4:
+            name: punctuation.separator.semicolon.webgal
+      - match: (?m)^[ \t]*(changeFigure)(:)([^;]*)(;)?
+        captures:
+          1:
+            name: keyword.scenario.change_figure.webgal
+          2:
+            name: punctuation.separator.colon.webgal
+          3:
+            name: meta.change_figure.value.webgal
+            patterns:
+              - match: ((none) )|(none$)
+                captures:
+                  2:
+                    name: constant.other.none.webgal
+                  3:
+                    name: constant.other.none.webgal
+              - match: '(-)((left|right)|(next))'
+                captures:
+                  1:
+                    name: punctuation.separator.option.dash.webgal
+                  3:
+                    name: constant.language.position.webgal
+                  4:
+                    name: constant.language.control.next.webgal
+              # NOTE: It will regard the whole line as a string.
+              # So we put it at the end of the pattern list.
+              - match: '[^ ;]+'
+                captures:
+                  0:
+                    name: string.unquoted.change_bg.text.webgal
+          4:
+            name: punctuation.separator.semicolon.webgal
+      # # use an inline modifier
+      # - match: (?m)^[ \t]*(intro|miniAvatar|changeBG(_next)?|changeP(_(left|right))?(_next)?)(:)
+      # # only use normal patterns
+      # # - match: '(^[ \t]*|\n[ \t]*)(intro):'
+      #   captures:
+      #     1:
+      #       name: keyword.stage.normal.webgal
+      #     2:
+      #       name: punctuation.separator.colon.webgal
+      # - match: (?m)^[ \t]*(set(Bg|Fig)Ani)(:)
+      #   captures:
+      #     1:
+      #       name: keyword.stage.animated.webgal
+      #     2:
+      #       name: punctuation.separator.colon.webgal
+      # - match: (?m)^[ \t]*(bgm|playVideo)(:)
+      #   captures:
+      #     1:
+      #       name: keyword.media.webgal
+      #     2:
+      #       name: punctuation.separator.colon.webgal
+      # - match: (?m)^[ \t]*((set|show)Var|var(Set|Up|Drop))(:)
+      #   captures:
+      #     1:
+      #       name: keyword.definition.variable.webgal
+      #     2:
+      #       name: punctuation.separator.colon.webgal
+      # - match: ^[ \t]*(if)\(
+      #   captures:
+      #     1:
+      #       name: keyword.control.conditional.webgal
+      # - match: (?m)^[ \t]*(changeScene|choose(_label)?|(jump_)?label|jump_var(Reach|Below))(:)
+      #   captures:
+      #     1:
+      #       name: keyword.control.flow.webgal
+      #     2:
+      #       name: punctuation.separator.colon.webgal
+  # meta:
+  #   patterns:
+  #     - begin: \(
+  #       beginCaptures:
+  #         0:
+  #           name: meta.brace.round.open.webgal
+  #       end: \)
+  #       endCaptures:
+  #         0:
+  #           name: meta.brace.round.close.webgal
 scopeName: source.webgal
