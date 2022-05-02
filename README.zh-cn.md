@@ -61,6 +61,12 @@ VS Code 使用 JSON 文件（`*.tmLanguage.json`）来高亮代码，但是有�
   - 非英文的 `<描述>` 和 `[可选 正文]` 也能接受；
   - 你可以配置 [husky](https://typicode.github.io/husky/#/) 作提交提示；
   - 如果你的提交将关闭任何 issue 或 PR，请利用好 `[可选 脚注]`，类似 `Close #xx`、`PR Close #xx`（只要是 GitHub 支持的写法都可接受）。
+- Scope 命名
+
+  最好为 scopes 选择合适的名字。VS Code 语言插件官方文档中提及了 [TextMate 1.x Manual](https://macromates.com/manual/en/language_grammars)，后者包含了一个有关 scope 命名惯例的详细列表。另外你也可以阅读 VS Code 内置的语言文件，例如 `json.tmLanguage.json`。
+- 分支
+
+  你的 PR 的上游分支应该设置为 `main`，而不是 `dev`。某条用中文编写的 [issue](https://github.com/LittleYe233/vscode-webgal-highlighting/issues/3) 解释了原因。
 
 ## 发行说明
 

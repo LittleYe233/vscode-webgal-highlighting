@@ -76,6 +76,13 @@ There are only few suggestions for developers who create PRs:
   - non-English `<description>` and `[optional body]` of a commit can be accepted;
   - you can set up [husky](https://typicode.github.io/husky/#/) to lint your commits;
   - if your commits will close any issue or PR, please take advantage of `[optional footer(s)]` like `Close #xx` and `PR Close #xx` (accepted as long as GitHub supports it).
+- Scope naming
+
+  It's better to choose appropriate names for your scopes. [TextMate 1.x Manual](https://macromates.com/manual/en/language_grammars) is mentioned in the official documentation of VS Code language extension, which includes a detailed list of conventional scope names. Also you can have a look at the built-in language files in VS Code, i.e. `json.tmLanguage.json`.
+
+- Branches
+
+  The upstream branch of your pull requests should be `main`, not `dev`. There is an [issue](https://github.com/LittleYe233/vscode-webgal-highlighting/issues/3) written in Chinese explaining why.
 
 ## Release Notes
 
