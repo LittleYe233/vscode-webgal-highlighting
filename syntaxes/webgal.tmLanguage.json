@@ -237,6 +237,101 @@
               "name": "punctuation.separator.semicolon.webgal"
             }
           }
+        },
+        {
+          "match": "(?m)^[ \\t]*(miniAvatar)(:)([^;]*)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.mini_avatar.webgal"
+            },
+            "2": {
+              "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "name": "meta.mini_avatar.value.webgal",
+              "patterns": [
+                {
+                  "match": "none$",
+                  "name": "constant.other.none.webgal"
+                },
+                {
+                  "match": "[^ ;]+",
+                  "name": "string.unquoted.mini_avatar.text.webgal"
+                }
+              ]
+            },
+            "4": {
+              "name": "punctuation.separator.semicolon.webgal"
+            }
+          }
+        },
+        {
+          "match": "(?m)^[ \\t]*((change|call)Scene)(:)([^;]*)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.scene.webgal"
+            },
+            "3": {
+              "name": "punctuation.separator.colon.webgal"
+            },
+            "4": {
+              "name": "string.unquoted.scene.webgal"
+            },
+            "5": {
+              "name": "punctuation.separator.semicolon.webgal"
+            }
+          }
+        },
+        {
+          "match": "(?m)^[ \\t]*(choose)(:)([^;]+)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.choose.webgal"
+            },
+            "2": {
+              "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "name": "meta.choose.value.webgal",
+              "patterns": [
+                {
+                  "match": "\\\\|",
+                  "name": "punctuation.separator.choose.vertical_bar.webgal"
+                },
+                {
+                  "match": "([^:|]+)(:)([^:|]+)",
+                  "captures": {
+                    "0": {
+                      "name": "meta.choose.branch.webgal"
+                    },
+                    "1": {
+                      "name": "string.unquoted.choose.branch.text.webgal"
+                    },
+                    "2": {
+                      "name": "punctuation.separator.choose.branch.colon.webgal"
+                    },
+                    "3": {
+                      "name": "string.unquoted.choose.branch.filepath.webgal"
+                    }
+                  }
+                }
+              ]
+            },
+            "4": {
+              "name": "punctuation.separator.semicolon.webgal"
+            }
+          }
+        },
+        {
+          "match": "(?m)^[ \\t]*(end)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.control.end.webgal"
+            },
+            "2": {
+              "name": "punctuation.separator.semicolon.webgal"
+            }
+          }
         }
       ]
     }
