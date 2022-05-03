@@ -30,20 +30,21 @@ Here is a list of (almost) all syntaxes of WebGAL, where those checked are suppo
     - [x] Scenarios (`changeScene`, `callScene`)
     - [x] Branches (`choose`)
     - [x] Title screen (`end`)
-    - [ ] Labels (`jumpLabel`, `label`)
-  - [ ] Background music (`bgm`)
-  - [ ] Videos (`playVideo`)
+    - [x] Labels (`jumpLabel`, `label`)
+  - [x] Background music (`bgm`)
+  - [x] Videos (`playVideo`)
   - Animations
-    - [ ] Backgrounds (`setBgAni`)
-    - [ ] "tachie" (`setFigAni`)
+    - [x] Backgrounds (`setBgAni`)
+    - [x] "tachie" (`setFigAni`)
       - [ ] CSS
   - Special effects (PixiJS)
-    - [ ] Initialize (`pixiInit`)
-    - [ ] Perform (`pixiPerform`)
+    - [x] Initialize (`pixiInit`)
+    - [x] Perform (`pixiPerform`)
   - Variables **(awaiting development)**
 - General
-  - [ ] Options (`-left`, `-right`, `-next`)
+  - [x] Options (`-left`, `-right`, `-next`)
   - [x] Comments (`//`)
+  - [x] Brackets (`()`)
 
 ## Acknowledgement
 

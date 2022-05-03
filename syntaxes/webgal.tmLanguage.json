@@ -10,6 +10,9 @@
     },
     {
       "include": "#scenarios"
+    },
+    {
+      "include": "#meta"
     }
   ],
   "repository": {
@@ -266,18 +269,18 @@
           }
         },
         {
-          "match": "(?m)^[ \\t]*((change|call)Scene)(:)([^;]*)(;)?",
+          "match": "(?m)^[ \\t]*((change|call)Scene|bgm|playVideo|(jumpL|l)abel)(:)([^;]*)(;)?",
           "captures": {
             "1": {
-              "name": "keyword.scenario.scene.webgal"
-            },
-            "3": {
-              "name": "punctuation.separator.colon.webgal"
+              "name": "keyword.scenario.common.webgal"
             },
             "4": {
-              "name": "string.unquoted.scene.webgal"
+              "name": "punctuation.separator.colon.webgal"
             },
             "5": {
+              "name": "string.unquoted.common.webgal"
+            },
+            "6": {
               "name": "punctuation.separator.semicolon.webgal"
             }
           }
@@ -330,6 +333,144 @@
             },
             "2": {
               "name": "punctuation.separator.semicolon.webgal"
+            }
+          }
+        },
+        {
+          "match": "(?m)^[ \\t]*(pixiInit)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.pixi_init.webgal"
+            },
+            "2": {
+              "name": "punctuation.separator.semicolon.webgal"
+            }
+          }
+        },
+        {
+          "match": "(?m)^[ \\t]*(pixiPerform)(:)([^;]+)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.pixi_perform.webgal"
+            },
+            "2": {
+              "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "patterns": [
+                {
+                  "match": "rain|snow",
+                  "name": "constant.other.pixi_perform.builtin.webgal"
+                },
+                {
+                  "match": "[^;]+",
+                  "name": "variable.other.pixi_perform.webgal"
+                }
+              ]
+            },
+            "4": {
+              "name": "punctuation.separator.semicolon.webgal"
+            }
+          }
+        },
+        {
+          "match": "(?m)^[ \\t]*(setBgAni)(:)([^;]+)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.set_bg_ani.webgal"
+            },
+            "2": {
+              "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "name": "meta.set_bg_ani.value.webgal",
+              "patterns": [
+                {
+                  "match": "bg_(softIn|down)",
+                  "name": "constant.other.set_bg_ani.name.builtin.webgal"
+                },
+                {
+                  "match": "[^\\d;]+",
+                  "name": "variable.other.set_bg_ani.name.webgal"
+                },
+                {
+                  "match": "(\\d+)(s)",
+                  "name": "meta.duration.webgal",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.duration.webgal"
+                    },
+                    "2": {
+                      "name": "constant.language.duration.webgal"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "match": "(?m)^[ \\t]*(setFigAni)(:)([^;]+)(;)?",
+          "captures": {
+            "1": {
+              "name": "keyword.scenario.set_fig_ani.webgal"
+            },
+            "2": {
+              "name": "punctuation.separator.colon.webgal"
+            },
+            "3": {
+              "name": "meta.set_fig_ani.value.webgal",
+              "patterns": [
+                {
+                  "match": "shake|(up|left|right|center)In|moveBaF",
+                  "name": "constant.other.set_fig_ani.name.builtin.webgal"
+                },
+                {
+                  "match": "(-)(left|right)",
+                  "captures": {
+                    "1": {
+                      "name": "punctuation.separator.option.dash.webgal"
+                    },
+                    "2": {
+                      "name": "constant.language.position.webgal"
+                    }
+                  }
+                },
+                {
+                  "match": "[^-\\d;]+",
+                  "name": "variable.other.set_fig_ani.name.webgal"
+                },
+                {
+                  "match": "(\\d+)(s)",
+                  "name": "meta.duration.webgal",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.duration.webgal"
+                    },
+                    "2": {
+                      "name": "keyword.other.unit.second.webgal"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "meta": {
+      "patterns": [
+        {
+          "begin": "\\(",
+          "beginCaptures": {
+            "0": {
+              "name": "meta.brace.round.open.webgal"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "meta.brace.round.close.webgal"
             }
           }
         }
